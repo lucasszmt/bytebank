@@ -1,5 +1,6 @@
 import 'package:bytebank/screens/transferencia/formulario.dart';
 import 'package:bytebank/screens/transferencia/lista.dart';
+import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(Bytebank());
@@ -19,7 +20,8 @@ class Bytebank extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => ListaTransferencias(),
+        '/': (context) => Dashboard(),
+        '/listatransferencia': (context) => ListaTransferencias(),
         '/formulario': (context) => FormularioTransferencia()
       },
     );
