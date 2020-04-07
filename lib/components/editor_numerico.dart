@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Editor extends StatelessWidget {
-
+class EditorNumeric extends StatelessWidget {
   final TextEditingController controlador;
   final String rotulo;
   final String dica;
   final Icon icone;
 
-  Editor({this.controlador, this.rotulo, this.dica, this.icone});
+  EditorNumeric({this.controlador, this.rotulo, this.dica, this.icone});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,12 @@ class Editor extends StatelessWidget {
       child: TextField(
         controller: controlador,
         style: TextStyle(fontSize: 24),
+        keyboardType: TextInputType.numberWithOptions(),
         decoration: InputDecoration(
-            labelText: rotulo, hintText: dica),
+          labelText: this.rotulo,
+          hintText: this.dica,
+          icon: icone != null ? icone : null,
+        ),
       ),
     );
   }

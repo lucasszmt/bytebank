@@ -1,6 +1,6 @@
 import 'package:bytebank/models/transferencia.dart';
 import 'package:flutter/material.dart';
-import 'package:bytebank/components/editor.dart';
+import 'package:bytebank/components/editor_numerico.dart';
 
 const _tituloAppBar = 'Criando Transferência';
 const _rotuloCampoValor = 'Valor';
@@ -30,12 +30,12 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Editor(
+            EditorNumeric(
               controlador: widget._controladorCampoNumeroConta,
               dica: _dicaCampoNumeroConta,
               rotulo: _rotuloCampoNumeroConta,
             ),
-            Editor(
+            EditorNumeric(
               controlador: widget._controladorCampoValor,
               dica: _dicaCampoValor,
               rotulo: _rotuloCampoValor,
