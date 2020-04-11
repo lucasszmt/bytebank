@@ -1,8 +1,8 @@
 import 'package:bytebank/components/contact_card.dart';
-import 'package:bytebank/database/app_database.dart';
+import 'package:bytebank/database/contact/contact_dao.dart';
 import 'package:bytebank/models/contato.dart';
+import 'package:bytebank/screens/contacts/form.dart';
 import 'package:flutter/material.dart';
-import 'package:bytebank/screens/contatos/formulario_contatos.dart';
 
 class ContactsList extends StatefulWidget {
   @override
@@ -10,6 +10,8 @@ class ContactsList extends StatefulWidget {
 }
 
 class ContactsListState extends State<ContactsList> {
+  final ContactDao _dao = ContactDao();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class ContactsListState extends State<ContactsList> {
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: List(),
-        future: findAll(),
+        future: _dao.findAll(),
         // ignore: missing_return
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
@@ -61,7 +63,7 @@ class ContactsListState extends State<ContactsList> {
         tooltip: 'dica',
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => FormularioContatos(),
+            builder: (context) => ContactsForm(),
           ));
         },
       ),

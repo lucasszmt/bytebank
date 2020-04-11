@@ -1,4 +1,4 @@
-import 'package:bytebank/screens/contatos/lista_contatos.dart';
+import 'package:bytebank/screens/contacts/list.dart';
 import 'package:bytebank/screens/transferencia/formulario.dart';
 import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:bytebank/screens/dashboard/dashboard.dart';

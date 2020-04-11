@@ -1,19 +1,21 @@
 import 'package:bytebank/database/app_database.dart';
+import 'package:bytebank/database/contact/contact_dao.dart';
 import 'package:bytebank/models/contato.dart';
 import 'package:flutter/material.dart';
 import 'package:bytebank/components/editor_numerico.dart';
 import 'package:bytebank/components/editor.dart';
 
-class FormularioContatos extends StatefulWidget {
+class ContactsForm extends StatefulWidget {
   final TextEditingController _accountNumberController =
       new TextEditingController();
   final TextEditingController _nameController = new TextEditingController();
+  final ContactDao _dao = ContactDao();
 
   @override
-  _FormularioContatosState createState() => _FormularioContatosState();
+  _ContactsFormState createState() => _ContactsFormState();
 }
 
-class _FormularioContatosState extends State<FormularioContatos> {
+class _ContactsFormState extends State<ContactsForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,7 @@ class _FormularioContatosState extends State<FormularioContatos> {
                   final int conta =
                       int.tryParse(widget._accountNumberController.text);
                   final Contact contact = Contact(0, name, conta);
-                  save(contact);
+                  widget._dao.save(contact);
                   Navigator.pop(context, contact);
                 },
                 child: Text('Create'),

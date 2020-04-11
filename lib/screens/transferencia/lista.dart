@@ -34,8 +34,7 @@ class ListaTransferenciasState extends State<ListaTransferencias> {
   }
 
   void _criaTransferencia(BuildContext context) {
-    final Future<Transferencia> future =
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
       return FormularioTransferencia();
     // ignore: missing_return
     })).then((transferenciaRecebidas) {
