@@ -1,3 +1,4 @@
+import 'package:bytebank/database/app_database.dart';
 import 'package:bytebank/models/contato.dart';
 import 'package:flutter/material.dart';
 import 'package:bytebank/components/editor_numerico.dart';
@@ -41,6 +42,7 @@ class _FormularioContatosState extends State<FormularioContatos> {
                   final int conta =
                       int.tryParse(widget._accountNumberController.text);
                   final Contact contact = Contact(0, name, conta);
+                  save(contact);
                   Navigator.pop(context, contact);
                 },
                 child: Text('Create'),
@@ -50,6 +52,5 @@ class _FormularioContatosState extends State<FormularioContatos> {
         ],
       ),
     );
-    ;
   }
 }

@@ -1,4 +1,3 @@
-import 'package:bytebank/main.dart';
 import 'package:bytebank/screens/contatos/lista_contatos.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +25,7 @@ class Dashboard extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ListaContatos(),
+                    builder: (context) => ContactsList(),
                   ));
                 },
                 child: Container(
