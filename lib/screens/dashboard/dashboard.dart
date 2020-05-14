@@ -1,4 +1,7 @@
-import 'package:bytebank/screens/contacts//list.dart';
+import 'package:bytebank/components/feature_item.dart';
+import 'package:bytebank/http/transactions.dart';
+import 'package:bytebank/screens/contacts/list.dart';
+import 'package:bytebank/screens/transaction/list.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -13,47 +16,40 @@ class Dashboard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Image.asset(
               'images/bytebank_logo.png',
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              color: Theme.of(context).primaryColor,
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ContactsList(),
-                  ));
-                },
-                child: Container(
+          Container(
+            height: 100,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
                   padding: const EdgeInsets.all(8.0),
-                  height: 100,
-                  width: 150,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Icon(
-                        Icons.people,
-                        size: 24,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Contacts',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+                  child: FeatureItem(
+                    'Transfer',
+                    Icons.monetization_on,
+                    onClick: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ContactsList(),
+                      ));
+                    },
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: FeatureItem('Transaction ', Icons.description,
+                      onClick: () {/*
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TransferList()));*/
+                        findAll();
+                  }),
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

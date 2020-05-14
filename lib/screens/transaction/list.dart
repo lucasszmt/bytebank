@@ -1,18 +1,18 @@
-import 'package:bytebank/models/transferencia.dart';
+import 'package:bytebank/models/transaction.dart';
 import 'package:flutter/material.dart';
 
-import 'formulario.dart';
+import 'form.dart';
 
-class ListaTransferencias extends StatefulWidget {
-  final List<Transferencia> _transferencias = List();
+class TransferList extends StatefulWidget {
+  final List<Transaction> _transferencias = List();
 
   @override
   State<StatefulWidget> createState() {
-    return ListaTransferenciasState();
+    return TransferListState();
   }
 }
 
-class ListaTransferenciasState extends State<ListaTransferencias> {
+class TransferListState extends State<TransferList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +35,8 @@ class ListaTransferenciasState extends State<ListaTransferencias> {
 
   void _criaTransferencia(BuildContext context) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return FormularioTransferencia();
-    // ignore: missing_return
+      return TransferForm();
+      // ignore: missing_return
     })).then((transferenciaRecebidas) {
       if (transferenciaRecebidas != null) {
         setState(() {
@@ -48,7 +48,7 @@ class ListaTransferenciasState extends State<ListaTransferencias> {
 }
 
 class ItemTransferencia extends StatelessWidget {
-  final Transferencia _transferencia;
+  final Transaction _transferencia;
 
   ItemTransferencia(this._transferencia);
 

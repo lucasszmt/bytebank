@@ -1,6 +1,4 @@
 import 'package:bytebank/screens/contacts/list.dart';
-import 'package:bytebank/screens/transferencia/formulario.dart';
-import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +16,7 @@ class Bytebank extends StatelessWidget {
           buttonTheme: ButtonThemeData(
               buttonColor: Colors.blueAccent[700],
               textTheme: ButtonTextTheme.primary)),
-      initialRoute: '/',
-      routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => Dashboard(),
-        '/listacontatos': (context) => ContactsList(),
-        '/listatransferencia': (context) => ListaTransferencias(),
-        '/formulario': (context) => FormularioTransferencia()
-      },
+      home: Dashboard(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:bytebank/models/transferencia.dart';
+import 'package:bytebank/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:bytebank/components/editor_numerico.dart';
 
@@ -9,18 +9,18 @@ const _rotuloCampoNumeroConta = 'Número da conta';
 const _dicaCampoNumeroConta = '0000';
 const _textoBotaoConfirmar = 'Confirmar';
 
-class FormularioTransferencia extends StatefulWidget {
+class TransferForm extends StatefulWidget {
   final TextEditingController _controladorCampoNumeroConta =
       TextEditingController();
   final TextEditingController _controladorCampoValor = TextEditingController();
 
   @override
   State<StatefulWidget> createState() {
-    return FormularioTransferenciaState();
+    return TransferFormState();
   }
 }
 
-class FormularioTransferenciaState extends State<FormularioTransferencia> {
+class TransferFormState extends State<TransferForm> {
 
 
   @override
@@ -64,7 +64,7 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
 
     if (numeroConta != null && valorTransferencia != null) {
       final transferenciaCriada =
-          Transferencia(valorTransferencia, numeroConta);
+          Transaction(valorTransferencia, numeroConta);
       Navigator.pop(context, transferenciaCriada);
     }
   }

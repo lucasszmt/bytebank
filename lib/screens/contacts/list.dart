@@ -1,6 +1,6 @@
 import 'package:bytebank/components/contact_card.dart';
 import 'package:bytebank/database/contact/contact_dao.dart';
-import 'package:bytebank/models/contato.dart';
+import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contacts/form.dart';
 import 'package:flutter/material.dart';
 

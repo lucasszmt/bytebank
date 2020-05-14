@@ -1,4 +1,4 @@
-class Transferencia {
+class Transaction {
   final double valor;
   final int numeroConta;
 
@@ -7,5 +7,5 @@ class Transferencia {
     return "Valor = $valor  e Numero da Conta = $numeroConta";
   }
 
-  Transferencia(this.valor, this.numeroConta);
+  Transaction(this.valor, this.numeroConta);
 }
