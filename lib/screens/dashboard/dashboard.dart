@@ -44,7 +44,7 @@ class Dashboard extends StatelessWidget {
                       onClick: () {/*
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => TransferList()));*/
-                        findAll();
+                        findAll().then((value) => print(value));
                   }),
                 ),
               ],
